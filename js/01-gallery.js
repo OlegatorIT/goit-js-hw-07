@@ -20,24 +20,24 @@ function addImages() {
 
 addImages();
 
-galleryEl.addEventListener("click", modal);
+galleryEl.addEventListener("click", openModal);
 
-function modal(e) {
+function openModal(e) {
   e.preventDefault();
   if (e.target.nodeName !== "IMG") {
     return;
   }
-  const createModlaWindow = basicLightbox.create(`
+  const modlaWindow = basicLightbox.create(`
       <img src="${e.target.dataset.source}" width="800" height="600">
   `);
 
-  createModlaWindow.show();
+  modlaWindow.show();
 
   galleryEl.addEventListener("keydown", closeModal);
 
   function closeModal(e) {
     if (e.key === "Escape") {
-      createModlaWindow.close();
+      modlaWindow.close();
       galleryEl.removeEventListener("keydown", closeModal);
     }
   }

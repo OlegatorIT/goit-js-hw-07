@@ -13,9 +13,9 @@ function addImages() {
             </a>
           </li>`
     )
-    .join()
-    .replaceAll(",", "");
-  galleryEl.innerHTML += addImg;
+    .join("");
+  galleryEl.innerHTML = addImg;
+  console.log(addImg);
 }
 
 addImages();

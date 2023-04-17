@@ -13,9 +13,8 @@ function addImages() {
             </a>
           </li>`
     )
-    .join()
-    .replaceAll(",", "");
-  galleryEl.insertAdjacentHTML("beforeend", addImg);
+    .join("");
+  galleryEl.innerHTML = addImg;
 }
 
 addImages();
